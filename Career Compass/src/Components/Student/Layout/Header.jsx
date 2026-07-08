@@ -80,6 +80,43 @@ export default function Header() {
                         </li>
                       </ul>
                     </li>
+                    <li className="has-children">
+                      <Link to="/mentorship" className="nav-link text-light">
+                        Mentorship Session
+                      </Link>
+                      <ul className="dropdown">
+                        <li>
+                          <a href="single_service.html" className="nav-link">
+                            Email Marketing
+                          </a>
+                        </li>
+                        <li>
+                          <a href="single_service.html" className="nav-link">
+                            Offline SEO
+                          </a>
+                        </li>
+                        <li>
+                          <a href="single_service.html" className="nav-link">
+                            Social media marketing
+                          </a>
+                        </li>
+                        <li>
+                          <a href="single_service.html" className="nav-link">
+                            Lead Generation
+                          </a>
+                        </li>
+                        <li>
+                          <a href="single_service.html" className="nav-link">
+                            Web Design
+                          </a>
+                        </li>
+                        <li>
+                          <a href="single_service.html" className="nav-link">
+                            Search Engine optimization
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
                     <li>
                       <Link className="nav-link text-light" to="/team">
                         Mentors

@@ -8,6 +8,7 @@ import About from "./Components/Student/Pages/About";
 import Team from "./Components/Student/Pages/Team";
 import Contact from "./Components/Student/Pages/Contact";
 import Services from "./Components/Student/Pages/Services";
+import Mentorship from "./Components/Student/Pages/Mentorship";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/team" element={<Team/>}></Route>
             <Route path="/contact" element={<Contact/>}></Route>
             <Route path="/services" element={<Services/>}></Route>
+            <Route path="/mentorship" element={<Mentorship/>}></Route>
 
           </Route>
           {/* Student Routes Ends */}
