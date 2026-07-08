@@ -132,7 +132,7 @@ export default function Footer() {
             <div className="col-lg-12 text-center">
               <div className="footer_copyright">
                 <p>
-                  © 2026 Monoline. All Rights Reserved by{" "}
+                  © 2026 Career Compass. All Rights Reserved by{" "}
                   <a href="https://bestwpware.com/" target="_blank">
                     Bestwpware
                   </a>

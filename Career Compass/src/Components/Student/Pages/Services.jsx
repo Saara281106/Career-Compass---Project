@@ -14,7 +14,7 @@ export default function Services() {
           <div className="row">
             <div className="col-lg-12 col-sm-12 col-xs-12 text-center">
               <div className="section-top-title">
-                <h1>Our Service</h1>
+                <h1>Career Path</h1>
               </div>
             </div>
             {/*- END COL */}
@@ -244,106 +244,7 @@ export default function Services() {
         {/*- END CONTAINER */}
       </div>
       {/* END PRICING TABLE */}
-      {/* START PARTNER LOGO */}
-      <div className="partner-logo section-padding">
-        <div className="container">
-          <div className="row text-center">
-            <div
-              className="col-lg-2 col-sm-4 col-xs-12 no-padding wow fadeInUp"
-              
-            >
-              <div className="single_logo single_logo_bm">
-                <a href="#">
-                  <img
-                    src="/img/partner/1.png"
-                    alt=""
-                    className="img-fluid"
-                  />
-                </a>
-              </div>
-            </div>
-            {/*- END COL */}
-            <div
-              className="col-lg-2 col-sm-4 col-xs-12 no-padding wow fadeInUp"
-              
-            >
-              <div className="single_logo">
-                <a href="#">
-                  <img
-                    src="/img/partner/2.png"
-                    alt=""
-                    className="img-fluid"
-                  />
-                </a>
-              </div>
-            </div>
-            {/*- END COL */}
-            <div
-              className="col-lg-2 col-sm-4 col-xs-12 no-padding wow fadeInUp"
-             
-            >
-              <div className="single_logo single_logo_bm">
-                <a href="#">
-                  <img
-                    src="/img/partner/3.png"
-                    alt=""
-                    className="img-fluid"
-                  />
-                </a>
-              </div>
-            </div>
-            {/*- END COL */}
-            <div
-              className="col-lg-2 col-sm-4 col-xs-12 no-padding wow fadeInUp"
-              
-            >
-              <div className="single_logo">
-                <a href="#">
-                  <img
-                    src="/img/partner/4.png"
-                    alt=""
-                    className="img-fluid"
-                  />
-                </a>
-              </div>
-            </div>
-            {/*- END COL */}
-            <div
-              className="col-lg-2 col-sm-4 col-xs-12 no-padding wow fadeInUp"
-             
-            >
-              <div className="single_logo">
-                <a href="#">
-                  <img
-                    src="/img/partner/5.png"
-                    alt=""
-                    className="img-fluid"
-                  />
-                </a>
-              </div>
-            </div>
-            {/*- END COL */}
-            <div
-              className="col-lg-2 col-sm-4 col-xs-12 no-padding wow fadeInUp"
-             
-            >
-              <div className="single_logo">
-                <a href="#">
-                  <img
-                    src="/img/partner/6.png"
-                    alt=""
-                    className="img-fluid"
-                  />
-                </a>
-              </div>
-            </div>
-            {/*- END COL */}
-          </div>
-          {/*- END ROW */}
-        </div>
-        {/*- END CONTAINER */}
-      </div>
-      {/* END PARTNER LOGO */}
+       <br /><br /><br />
     </>
   );
 }
