@@ -24,118 +24,107 @@ export default function Services() {
         {/*- END CONTAINER */}
       </section>
       {/* END SECTION TOP */}
-      {/* SETVICE */}
-      <section className="service_area section-padding">
-        <div className="container">
-          <div className="row text-center">
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
-              <div className="single_service">
-                <img src="/img/icon/research.png" alt="icon" />
-                <h4>Email Marketing</h4>
-                <p>
-                  Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                  sit amet, consectetur elit.
-                </p>
-                <a className="btn_one" href="single_service.html">
-                  More Info
-                </a>
+      <>
+        {/* START PORTFOLIO PROJECT */}
+        <section className="portfolio_project_area section-padding">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12 col-sm-12 col-xs-12">
+                <div className="single_project">
+                  <img
+                    src="/img/portfolio/1.jpg"
+                    className="img-fluid"
+                    alt="portfolio"
+                  />
+                  <h1>01</h1>
+                  <h2>Website Design Agency</h2>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry
+                    standard dummy text ever since the when an unknown printer
+                    took a galley of type and scrambled it to make a type
+                    specimen book. It is a long established fact that a reader.
+                  </p>
+                  <a className="btn_one" href="single_project.html">
+                    View Project
+                  </a>
+                </div>
               </div>
-            </div>
-            {/* END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
-              <div className="single_service">
-                <img src="/img/icon/brand.png" alt="icon" />
-                <h4>Offline SEO</h4>
-                <p>
-                  Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                  sit amet, consectetur elit.
-                </p>
-                <a className="btn_one" href="single_service.html">
-                  More Info
-                </a>
+              {/*- END COL */}
+              <div className="col-lg-12 col-sm-12 col-xs-12">
+                <div className="single_project">
+                  <img
+                    src="/img/portfolio/2.jpg"
+                    className="img-fluid"
+                    alt="portfolio"
+                  />
+                  <h1>02</h1>
+                  <h2>Product Marketing</h2>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry
+                    standard dummy text ever since the when an unknown printer
+                    took a galley of type and scrambled it to make a type
+                    specimen book. It is a long established fact that a reader.
+                  </p>
+                  <a className="btn_one" href="single_project.html">
+                    View Project
+                  </a>
+                </div>
               </div>
-            </div>
-            {/* END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
-              <div className="single_service">
-                <img src="/img/icon/web.png" alt="icon" />
-                <h4>Social media marketing</h4>
-                <p>
-                  Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                  sit amet, consectetur elit.
-                </p>
-                <a className="btn_one" href="single_service.html">
-                  More Info
-                </a>
+              {/*- END COL */}
+              <div className="col-lg-12 col-sm-12 col-xs-12">
+                <div className="single_project">
+                  <img
+                    src="/img/portfolio/3.jpg"
+                    className="img-fluid"
+                    alt="portfolio"
+                  />
+                  <h1>03</h1>
+                  <h2>App Development</h2>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry
+                    standard dummy text ever since the when an unknown printer
+                    took a galley of type and scrambled it to make a type
+                    specimen book. It is a long established fact that a reader.
+                  </p>
+                  <a className="btn_one" href="single_project.html">
+                    View Project
+                  </a>
+                </div>
               </div>
-            </div>
-            {/* END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
-              <div className="single_service">
-                <img src="/img/icon/strategy.png" alt="icon" />
-                <h4>Lead Generation</h4>
-                <p>
-                  Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                  sit amet, consectetur elit.
-                </p>
-                <a className="btn_one" href="single_service.html">
-                  More Info
-                </a>
+              {/*- END COL */}
+              <div className="col-lg-12 col-sm-12 col-xs-12">
+                <div className="single_project">
+                  <img
+                    src="/img/portfolio/4.jpg"
+                    className="img-fluid"
+                    alt="portfolio"
+                  />
+                  <h1>04</h1>
+                  <h2>Business Strategy</h2>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry
+                    standard dummy text ever since the when an unknown printer
+                    took a galley of type and scrambled it to make a type
+                    specimen book. It is a long established fact that a reader.
+                  </p>
+                  <a className="btn_one" href="single_project.html">
+                    View Project
+                  </a>
+                </div>
               </div>
+              {/*- END COL */}
             </div>
-            {/* END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
-              <div className="single_service">
-                <img src="/img/icon/design.png" alt="icon" />
-                <h4>Web Design</h4>
-                <p>
-                  Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                  sit amet, consectetur elit.
-                </p>
-                <a className="btn_one" href="single_service.html">
-                  More Info
-                </a>
-              </div>
-            </div>
-            {/* END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
-              <div className="single_service">
-                <img src="/img/icon/photo.png" alt="icon" />
-                <h4>Search Engine optimization</h4>
-                <p>
-                  Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                  sit amet, consectetur elit.
-                </p>
-                <a className="btn_one" href="single_service.html">
-                  More Info
-                </a>
-              </div>
-            </div>
-            {/* END COL */}
+            {/*- END ROW */}
           </div>
-          {/* END ROW */}
-        </div>
-        {/*- END CONTAINER */}
-      </section>
-      {/* END SETVICE */}
+          {/*- END CONTAINER */}
+        </section>
+        {/* END PORTFOLIO PROJECT */}
+      </>
+
       {/* START PRICING TABLE */}
       <div
         className="pricing-table-area section-padding"
@@ -154,10 +143,7 @@ export default function Services() {
             </p>
           </div>
           <div className="row">
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
+            <div className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp">
               <div className="pricingTable blue">
                 <div className="pricingTable-header">
                   <div className="price-value">
@@ -182,10 +168,7 @@ export default function Services() {
               </div>
             </div>
             {/*- END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-             
-            >
+            <div className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp">
               <div className="pricingTable blue">
                 <div className="pricingTable-header">
                   <div className="price-value">
@@ -210,10 +193,7 @@ export default function Services() {
               </div>
             </div>
             {/*- END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
+            <div className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp">
               <div className="pricingTable blue">
                 <div className="pricingTable-header">
                   <div className="price-value">
@@ -244,7 +224,9 @@ export default function Services() {
         {/*- END CONTAINER */}
       </div>
       {/* END PRICING TABLE */}
-       <br /><br /><br />
+      <br />
+      <br />
+      <br />
     </>
   );
 }

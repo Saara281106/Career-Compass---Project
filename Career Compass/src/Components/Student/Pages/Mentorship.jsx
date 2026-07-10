@@ -24,118 +24,120 @@ export default function Mentorship() {
         {/*- END CONTAINER */}
       </section>
       {/* END SECTION TOP */}
-      {/* SETVICE */}
-      <section className="service_area section-padding">
-        <div className="container">
-          <div className="row text-center">
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
-              <div className="single_service">
-                <img src="/img/icon/research.png" alt="icon" />
-                <h4>Email Marketing</h4>
-                <p>
-                  Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                  sit amet, consectetur elit.
-                </p>
-                <a className="btn_one" href="single_service.html">
-                  More Info
-                </a>
+      <>
+        {/* START PORTFOLIO SINGLE PROJECT */}
+        <section className="single_project_area section-padding">
+          <div className="container">
+            <div className="row project_dec">
+              <div className="col-lg-6 col-sm-12 col-xs-12">
+                <div className="media-left">
+                  <img
+                    src="/img/portfolio/2.jpg"
+                    className="img-fluid"
+                    alt="portfolio-image"
+                  />
+                </div>
               </div>
-            </div>
-            {/* END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
-              <div className="single_service">
-                <img src="/img/icon/brand.png" alt="icon" />
-                <h4>Offline SEO</h4>
-                <p>
-                  Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                  sit amet, consectetur elit.
-                </p>
-                <a className="btn_one" href="single_service.html">
-                  More Info
-                </a>
+              <div className="col-lg-6 col-sm-12 col-xs-12">
+                <div className="project_details">
+                  <div className="about_project">
+                    <h4>About Project</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore. Lorem ipsum
+                      dolor sit amet, consectetur adipisicing elit, sed do
+                      eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit
+                      amet.
+                    </p>
+                  </div>
+                  <div className="about_project_details">
+                    <ul>
+                      <li>
+                        <i className="fa fa-user" />
+                        <b>Client: </b>Google, Inc
+                      </li>
+                      <li>
+                        <i className="fa fa-clock-o" />
+                        <b>Date: </b>01 Sep, 2026
+                      </li>
+                      <li>
+                        <i className="fa fa-folder" />
+                        <b>Category: </b>
+                        <a href="#">Web Design</a>
+                      </li>
+                      <li>
+                        <i className="fa fa-folder" />
+                        <b>Project Url: </b>
+                        <a href="#">www.google.com</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <a className="btn_one" href="#">
+                    See Live Project
+                  </a>
+                </div>
               </div>
+              {/*- END COL */}
             </div>
-            {/* END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
-              <div className="single_service">
-                <img src="/img/icon/web.png" alt="icon" />
-                <h4>Social media marketing</h4>
-                <p>
-                  Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                  sit amet, consectetur elit.
-                </p>
-                <a className="btn_one" href="single_service.html">
-                  More Info
-                </a>
+            {/*- END ROW */}
+            <div className="row project_dec">
+              <div className="col-lg-6 col-sm-12 col-xs-12">
+                <div className="media-left">
+                  <img
+                    src="/img/portfolio/2.jpg"
+                    className="img-fluid"
+                    alt="portfolio-image"
+                  />
+                </div>
               </div>
-            </div>
-            {/* END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
-              <div className="single_service">
-                <img src="/img/icon/strategy.png" alt="icon" />
-                <h4>Lead Generation</h4>
-                <p>
-                  Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                  sit amet, consectetur elit.
-                </p>
-                <a className="btn_one" href="single_service.html">
-                  More Info
-                </a>
+              <div className="col-lg-6 col-sm-12 col-xs-12">
+                <div className="project_details">
+                  <div className="about_project">
+                    <h4>About Project</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore. Lorem ipsum
+                      dolor sit amet, consectetur adipisicing elit, sed do
+                      eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit
+                      amet.
+                    </p>
+                  </div>
+                  <div className="about_project_details">
+                    <ul>
+                      <li>
+                        <i className="fa fa-user" />
+                        <b>Client: </b>Google, Inc
+                      </li>
+                      <li>
+                        <i className="fa fa-clock-o" />
+                        <b>Date: </b>02 Sep, 2026
+                      </li>
+                      <li>
+                        <i className="fa fa-folder" />
+                        <b>Category: </b>
+                        <a href="#">Web Design</a>
+                      </li>
+                      <li>
+                        <i className="fa fa-folder" />
+                        <b>Project Url: </b>
+                        <a href="#">www.google.com</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <a className="btn_one" href="#">
+                    See Live Project
+                  </a>
+                </div>
               </div>
+              {/*- END COL */}
             </div>
-            {/* END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
-              <div className="single_service">
-                <img src="/img/icon/design.png" alt="icon" />
-                <h4>Web Design</h4>
-                <p>
-                  Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                  sit amet, consectetur elit.
-                </p>
-                <a className="btn_one" href="single_service.html">
-                  More Info
-                </a>
-              </div>
-            </div>
-            {/* END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
-              <div className="single_service">
-                <img src="/img/icon/photo.png" alt="icon" />
-                <h4>Search Engine optimization</h4>
-                <p>
-                  Sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor
-                  sit amet, consectetur elit.
-                </p>
-                <a className="btn_one" href="single_service.html">
-                  More Info
-                </a>
-              </div>
-            </div>
-            {/* END COL */}
+            {/*- END ROW */}
           </div>
-          {/* END ROW */}
-        </div>
-        {/*- END CONTAINER */}
-      </section>
-      {/* END SETVICE */}
+          {/*- END CONTAINER */}
+        </section>
+        {/* END PORTFOLIO SINGLE PROJECT */}
+      </>
+
       {/* START PRICING TABLE */}
       <div
         className="pricing-table-area section-padding"
@@ -154,10 +156,7 @@ export default function Mentorship() {
             </p>
           </div>
           <div className="row">
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
+            <div className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp">
               <div className="pricingTable blue">
                 <div className="pricingTable-header">
                   <div className="price-value">
@@ -182,10 +181,7 @@ export default function Mentorship() {
               </div>
             </div>
             {/*- END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-             
-            >
+            <div className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp">
               <div className="pricingTable blue">
                 <div className="pricingTable-header">
                   <div className="price-value">
@@ -210,10 +206,7 @@ export default function Mentorship() {
               </div>
             </div>
             {/*- END COL */}
-            <div
-              className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp"
-              
-            >
+            <div className="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp">
               <div className="pricingTable blue">
                 <div className="pricingTable-header">
                   <div className="price-value">
@@ -244,7 +237,9 @@ export default function Mentorship() {
         {/*- END CONTAINER */}
       </div>
       {/* END PRICING TABLE */}
-       <br /><br /><br />
+      <br />
+      <br />
+      <br />
     </>
   );
 }
