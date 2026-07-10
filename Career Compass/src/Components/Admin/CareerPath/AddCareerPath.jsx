@@ -1,7 +1,14 @@
+import { useState } from "react";
+
 export default function AddCareerPath() {
+  
+  const [name , setName] = useState("");
+  const [description , setDescription] = useState("");
+  const [price , setPrice] = useState("");
+  
+  
   return (
     <>
-      
       {/* START SECTION TOP */}
       <section
         className="section-top"

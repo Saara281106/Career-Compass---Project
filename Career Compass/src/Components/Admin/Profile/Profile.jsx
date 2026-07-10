@@ -1,7 +1,8 @@
-export default function AdminDashboard() {
-  return (
-    <>
-      {/* START SECTION TOP */}
+export default function Profile(){
+    return(
+        <>
+        
+        {/* START SECTION TOP */}
       <section
         className="section-top"
         style={{
@@ -14,7 +15,7 @@ export default function AdminDashboard() {
           <div className="row">
             <div className="col-lg-12 col-sm-12 col-xs-12 text-center">
               <div className="section-top-title">
-                <h1>Dashboard</h1>
+                <h1>Profile</h1>
               </div>
             </div>
             {/*- END COL */}
@@ -24,9 +25,7 @@ export default function AdminDashboard() {
         {/*- END CONTAINER */}
       </section>
       {/* END SECTION TOP */}
-      
-
-      <br /><br /><br />
-    </>
-  );
+        <br /><br /><br />
+        </>
+    )
 }

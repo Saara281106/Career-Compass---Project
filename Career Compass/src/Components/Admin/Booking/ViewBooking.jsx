@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function ManageCareerPath() {
+export default function ViewBooking() {
   return (
     <>
       {/* START SECTION TOP */}
@@ -16,7 +16,7 @@ export default function ManageCareerPath() {
           <div className="row">
             <div className="col-lg-12 col-sm-12 col-xs-12 text-center">
               <div className="section-top-title">
-                <h1>Career Paths</h1>
+                <h1>Bookings</h1>
               </div>
             </div>
             {/*- END COL */}
@@ -44,15 +44,17 @@ export default function ManageCareerPath() {
           <thead>
             <tr className="table-primary">
               <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Description</th>
-              <th scope="col">Type</th>
-              <th scope="col">Price</th>
+              <th scope="col">User ID</th>
+              <th scope="col">Session ID</th>
+              <th scope="col">Date</th>
+              <th scope="col">Time</th>
+              <th scope="col">Status</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row"></th>
+              <td></td>
               <td></td>
               <td></td>
               <td></td>

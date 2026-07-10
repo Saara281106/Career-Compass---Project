@@ -17,6 +17,8 @@ import ManageCareerPath from "./Components/Admin/CareerPath/ManageCareerPath";
 import ManageMentorshipSession from "./Components/Admin/MentorshipSession/ManageMentorshipSession";
 import ManageResources from "./Components/Admin/Resources/ManageResources";
 import AddResources from "./Components/Admin/Resources/AddResources";
+import ViewBooking from "./Components/Admin/Booking/ViewBooking";
+import Profile from "./Components/Admin/Profile/profile";
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
             <Route path="addMentorshipSession" element={<AddMentorshipSession/>} />
             <Route path="manageResource" element={<ManageResources/>} />
             <Route path="addResource" element={<AddResources/>} />
+            <Route path="viewBooking" element={<ViewBooking/>} />
+            <Route path="profile" element={<Profile/>} />
           </Route>
           {/* Admin Panel Ends */}
         </Routes>
