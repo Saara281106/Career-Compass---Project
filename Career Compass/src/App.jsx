@@ -19,6 +19,7 @@ import ManageResources from "./Components/Admin/Resources/ManageResources";
 import AddResources from "./Components/Admin/Resources/AddResources";
 import ViewBooking from "./Components/Admin/Booking/ViewBooking";
 import Profile from "./Components/Admin/Profile/profile";
+import Register from "./auth/Register";
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
             <Route path="/contact" element={<Contact/>}></Route>
             <Route path="/services" element={<Services/>}></Route>
             <Route path="/mentorship" element={<Mentorship/>}></Route>
+            <Route path="/register" element={<Register/>}></Route>
+            
           </Route>
           {/* Student Routes Ends */}
 

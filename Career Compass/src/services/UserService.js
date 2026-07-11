@@ -1,17 +1,16 @@
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../Firebase";
 import { Users } from "../models/Users";
-const dbPath = "careerPaths";
+const dbPath = "users";
 
-class CareerPathService {
-  async add(Data) {
-    const newCareerPath = new Users();
-    newCareerPath.name = Data.name;
-    newCareerPath.email = Data.email;
-    newCareerPath.phone = Data.phone;
-    newCareerPath.address = Data.address;
-    newCareerPath.profileImage = Data.profileImage;
-    newCareerPath.userType = "admin/student";
+class UserService {
+  async register(Data) {
+    const newUser = new Users();
+    newUser.name = Data.name;
+    newUser.email = Data.email;
+    newUser.phone = Data.phone;
+    newUser.address = Data.address;
+    // newCareerPath.profileImage = Data.profileImage;
     const docRef = await addDoc(collection(db, dbPath), {
       ...newCareerPath,
     });
