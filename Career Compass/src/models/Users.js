@@ -1,4 +1,5 @@
 export class Users {
+  uid = "";
   name = "";
   email = "";
   phone = "";
@@ -6,5 +7,5 @@ export class Users {
   profileImage = "";
   userType = "admin/student";
   status = true;
-  createdAt = "";
+  createdAt = Date.now();
 }

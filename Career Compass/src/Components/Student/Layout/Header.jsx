@@ -127,6 +127,11 @@ export default function Header() {
                         Contact
                       </Link>
                     </li>
+                    <li>
+                      <Link className="nav-link text-light" to="/register">
+                        Register
+                      </Link>
+                    </li>
                   </ul>
                 </nav>
               </div>

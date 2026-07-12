@@ -20,6 +20,7 @@ import AddResources from "./Components/Admin/Resources/AddResources";
 import ViewBooking from "./Components/Admin/Booking/ViewBooking";
 import Profile from "./Components/Admin/Profile/profile";
 import Register from "./auth/Register";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
           {/* Admin Panel Ends */}
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </>
   );
 }
