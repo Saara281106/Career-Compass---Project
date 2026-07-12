@@ -132,6 +132,11 @@ export default function Header() {
                         Register
                       </Link>
                     </li>
+                    <li>
+                      <Link className="nav-link text-light" to="/login">
+                        Login
+                      </Link>
+                    </li>
                   </ul>
                 </nav>
               </div>

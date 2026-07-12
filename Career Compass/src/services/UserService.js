@@ -1,7 +1,7 @@
-import { collection, setDoc, doc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import { auth, db } from "../Firebase";
 import { Users } from "../models/Users";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 const dbPath = "users";
 
 class UserService {
@@ -20,6 +20,10 @@ class UserService {
       ...newUser
     });
     return newUser
+  }
+
+  async login(data) {
+    let userCredential = await signInWithEmailAndPassword(auth, data.email, data.password)
   }
 }
 

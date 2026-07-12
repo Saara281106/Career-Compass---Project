@@ -1,0 +1,6 @@
+class AuthService{
+
+    setData(data){
+        
+    }
+}
