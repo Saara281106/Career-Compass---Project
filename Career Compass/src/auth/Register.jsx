@@ -26,9 +26,12 @@ export default function Register() {
       };
 
       let res = await UserService.register(payload);
+      console.log("Hello");
       nav("/");
+      console.log("World");
       setLoading(false);
       toast.success("Registered Succesfully");
+      console.log("yeyyy");
     } catch (error) {
       setLoading(false);
       console.log(error);

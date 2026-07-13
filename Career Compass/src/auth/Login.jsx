@@ -1,4 +1,43 @@
+import { useState } from "react";
+import {  useNavigate } from "react-router-dom";
+import UserService from "../services/UserService";
+import { toast } from "react-toastify";
+
 export default function Login() {
+
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  let [loading, setLoading] = useState(false)
+  const nav = useNavigate();
+
+  async function submit(e){
+    try{
+      e.preventDefault()
+      setLoading(true);
+      let payload = {
+        email: email,
+        password: password
+      }
+      let res = await UserService.login(payload)
+      toast.success("Login Succesfull");
+      setLoading(false);
+
+      if(res.userType == "admin"){
+        nav("/admin");
+      }
+      else{
+        nav("/");
+      }
+    }
+    catch{
+      setLoading(false);
+      console.log(error);
+      toast.error(error.code);
+    }
+    finally{
+      setLoading(false);
+    }
+  }
   return (
     <>
       {/* START SECTION TOP */}
@@ -40,6 +79,7 @@ export default function Login() {
                   id="contact-form"
                   method="post"
                   encType="multipart/form-data"
+                  onSubmit={submit}
                 >
                   <div className="row">
                     
@@ -50,6 +90,10 @@ export default function Login() {
                         className="form-control"
                         placeholder="Enter Your Email"
                         required="required"
+                        value={email}
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                        }}
                       />
                     </div>
                     <div className="form-group col-md-12">
@@ -59,6 +103,10 @@ export default function Login() {
                         className="form-control"
                         placeholder="Enter Your Password"
                         required="required"
+                        value={password}
+                        onChange={(e) => {
+                          setPassword(e.target.value);
+                        }}
                       />
                     </div>
                     
@@ -71,7 +119,9 @@ export default function Login() {
                         className="contact_btn"
                         title="Submit Your Message!"
                       >
-                        Sign In
+                        {
+                          loading ? "signing in..." : "Sign In"
+                      }
                       </button>
                     </div>
                   </div>
