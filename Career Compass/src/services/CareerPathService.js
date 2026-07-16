@@ -1,4 +1,4 @@
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDoc, getDocs } from "firebase/firestore";
 import { CareerPath } from "../models/CareerPath";
 import { db } from "../Firebase";
 const dbPath = "careerPaths";
@@ -19,6 +19,15 @@ class CareerPathService {
       ...newCareerPath,
     });
     return CareerPath;
+  }
+
+  async all(){
+    const querySnapshot = await getDocs(collection(db , dbPath));
+    var careerPath = []
+    querySnapshot.forEach((doc) => {
+      careerPath.push({ id: doc.id, ...doc.Data()})
+    });
+    return careerPath;
   }
 }
 

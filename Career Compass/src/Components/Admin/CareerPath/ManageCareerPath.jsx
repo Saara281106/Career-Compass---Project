@@ -1,6 +1,28 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import CareerPathService from "../../../services/CareerPathService";
 
 export default function ManageCareerPath() {
+  let [loading, setLoading] = useState(false);
+
+  const [careerPath, setCareerPath] = useState([]);
+  useEffect(() => {
+    getAllCareerPath();
+  }, []);
+
+  async function getAllCareerPath() {
+    try {
+      setLoading(true);
+      let res = await CareerPathService.all();
+      setCareerPath(res);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <>
       {/* START SECTION TOP */}
@@ -18,7 +40,7 @@ export default function ManageCareerPath() {
               <div className="section-top-title">
                 <h1>Manage Career Paths</h1>
               </div>
-            </div> 
+            </div>
             {/*- END COL */}
           </div>
           {/*- END ROW */}
@@ -32,7 +54,7 @@ export default function ManageCareerPath() {
       <br />
       <div className="container">
         <div className="text-end">
-          <Link to="/admin/careerpath/add" >
+          <Link to="/admin/careerpath/add">
             <button type="button" class="btn btn-sm btn-primary">
               {" "}
               + Career Path{" "}
@@ -46,19 +68,16 @@ export default function ManageCareerPath() {
               <th scope="col">#</th>
               <th scope="col">Name</th>
               <th scope="col">Description</th>
+              <th scope="col">Image</th>
               <th scope="col">Type</th>
               <th scope="col">Price</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row"></th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            
+            {
+              
+            }
           </tbody>
         </table>
       </div>

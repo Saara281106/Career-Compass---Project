@@ -5,5 +5,5 @@ export class CareerPath {
   price = "";
   imageUrl = "";
   status = true;
-  createdAt = "";
+  createdAt = Date.now();
 }
