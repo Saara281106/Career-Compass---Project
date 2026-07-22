@@ -126,22 +126,36 @@ export default function AddResources() {
                         onChange={(e) => {
                           setResourceType(e.target.value);
                         }}
-                        style={{ height: "70px", width: "350px" }}
+                        style={{ height: "70px", width: "525px" }}
                       >
                         <option value="PDF">PDF</option>
                         <option value="Link">Link</option>
                         <option value="Video">Video</option>
                       </select>
                     </div>
+                    {resourceType === "PDF" || resourceType === "Video" ? (
+                      <div className="form-group col-md-6">
+                        <input
+                          type="file"
+                          onChange={(e) => {
+                            setResource(e.target.files[0]);
+                          }}
+                        />
+                      </div>
+                    ) : (
+                      <div className="form-group col-md-6">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Enter Link"
+                          value={resource}
+                          onChange={(e) => {
+                            setResource(e.target.value);
+                          }}
+                        />
+                      </div>
+                    )}
 
-                    <div className="form-group col-md-6">
-                      <input
-                        type="file"
-                        onChange={(e) => {
-                          setResource(e.target.files[0]);
-                        }}
-                      />
-                    </div>
                     <div className="col-md-12 text-center">
                       <button
                         type="submit"
