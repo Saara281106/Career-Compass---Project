@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import CareerPathService from "../../../services/CareerPathService";
+import ResourceService from "../../../services/ResourceService";
 
-export default function ManageCareerPath() {
+export default function ManageResources() {
   let [loading, setLoading] = useState(false);
 
-  const [careerPath, setCareerPath] = useState([]);
+  const [resources, setResources] = useState([]);
   useEffect(() => {
-    getAllCareerPath();
+    getAllResources();
   }, []);
 
-  async function getAllCareerPath() {
+  async function getAllResources() {
     try {
       setLoading(true);
-      let res = await CareerPathService.all();
+      let res = await ResourceService.all();
       console.log(res);
-      setCareerPath(res);
+      setResources(res);
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -24,11 +24,11 @@ export default function ManageCareerPath() {
     }
   }
 
-  async function deleteCareerPath(id) {
+  async function deleteResourecs(id) {
     try {
       setLoading(true);
-      let res = await CareerPathService.delete(id);
-      getAllCareerPath();
+      let res = await ResourceService.delete(id);
+      getAllResources();
     } catch (error) {
       console.log(error);
     } finally {
@@ -51,7 +51,7 @@ export default function ManageCareerPath() {
           <div className="row">
             <div className="col-lg-12 col-sm-12 col-xs-12 text-center">
               <div className="section-top-title">
-                <h1>Manage Career Paths</h1>
+                <h1>Manage Resources</h1>
               </div>
             </div>
             {/*- END COL */}
@@ -67,10 +67,10 @@ export default function ManageCareerPath() {
       <br />
       <div className="container">
         <div className="text-end">
-          <Link to="/admin/careerpath/add">
+          <Link to="/admin/resources/add">
             <button type="button" className="btn btn-warning text-light">
               {" "}
-              + Career Path{" "}
+              + RESOURCE{" "}
             </button>
           </Link>
         </div>
@@ -79,23 +79,23 @@ export default function ManageCareerPath() {
           <thead>
             <tr className="table">
               <th scope="col">#</th>
-              <th scope="col">Name</th>
+              <th scope="col">Title</th>
               <th scope="col">Description</th>
-              <th scope="col">Image</th>
               <th scope="col">Type</th>
-              <th scope="col">Price</th>
+              <th scope="col">Resource</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            {careerPath.map((careerPath, index) => (
+            {resources.map((resources, index) => (
               <tr>
                 <td scope="row">{index + 1}</td>
-                <td scope="row">{careerPath.name}</td>
-                <td scope="row">{careerPath.description} </td>
+                <td scope="row">{resources.title}</td>
+                <td scope="row">{resources.description} </td>
+                <td scope="row">{resources.resourceType} </td>
                 <td scope="row">
                   <img
-                    src={careerPath.imageUrl}
+                    src={resources.resourceUrl}
                     style={{
                       height: "100px",
                       width: "100px",
@@ -104,18 +104,11 @@ export default function ManageCareerPath() {
                     alt=""
                   />
                 </td>
-                <td scope="row">{careerPath.programType}</td>
+                
                 <td scope="row">
-                  {careerPath.programType === "Paid" ? (
-                    <>₹{careerPath.price}</>
-                  ) : (
-                    "₹0"
-                  )}
-                </td>
-                <td scope="row">
-                  <Link to={`/admin/careerpath/edit/${careerPath.id}`}>
+                  <Link to={`/admin/resources/edit/${resources.id}`}>
                     <button type="button" className="btn btn-sm btn-info">
-                      Edit
+                      Update
                     </button>
                   </Link>
 
@@ -123,7 +116,7 @@ export default function ManageCareerPath() {
                     type="button"
                     className="btn btn-sm btn-danger ms-2"
                     onClick={() => {
-                      deleteCareerPath(careerPath.id);
+                      deleteResourecs(resources.id);
                     }}
                   >
                     Delete

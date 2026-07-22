@@ -2,7 +2,7 @@ import { collection, addDoc, getDocs, getDoc, updateDoc, deleteDoc, doc } from "
 import { db } from "../Firebase";
 import { Resource } from "../models/Resource";
 import { toast } from "react-toastify";
-const dbPath = "careerPaths";
+const dbPath = "resources";
 
 class ResourceService {
   async add(Data) {

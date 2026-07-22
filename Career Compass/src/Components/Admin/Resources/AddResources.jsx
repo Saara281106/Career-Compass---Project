@@ -1,16 +1,15 @@
 import { useState } from "react";
-import CareerPathService from "../../../services/CareerPathService";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import CloudinaryService from "../../../services/CloudinaryService";
+import ResourceService from "../../../services/ResourceService";
 
-export default function AddCareerPath() {
+export default function AddResources() {
   let [loading, setLoading] = useState(false);
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [image, setImage] = useState("");
-  const [programType, setProgramType] = useState("Free");
+  const [resourceType, setResourceType] = useState("PDF");
+  const [resource, setResource] = useState("");
 
   const nav = useNavigate();
 
@@ -19,31 +18,28 @@ export default function AddCareerPath() {
     try {
       setLoading(true);
 
-      if (image) {
-        var imageUrl = await CloudinaryService.upload(image);
+      if (resource) {
+        var resourceUrl = await CloudinaryService.upload(resource);
       }
 
       let payload = {
-        name: name,
+        title: title,
         description: description,
-        programType: programType,
-        imageUrl: imageUrl,
+        resourceType: resourceType,
+        resourceUrl: resourceUrl,
       };
-      if (programType === "Paid") {
-        payload.price = price;
-      }
 
       console.log(payload);
 
-      await CareerPathService.add(payload);
+      await ResourceService.add(payload);
 
       setLoading(false);
-      toast.success("Career Path Added");
-      nav("/admin/careerpath/manage");
-      setName("");
+      toast.success("Resource Added");
+      nav("/admin/resources/manage");
+      setTitle("");
       setDescription("");
-      setProgramType("");
-      setPrice("");
+      setResourceType("");
+      //setResourceUrl("");
     } catch (error) {
       setLoading(false);
       console.log(error);
@@ -68,7 +64,7 @@ export default function AddCareerPath() {
           <div className="row">
             <div className="col-lg-12 col-sm-12 col-xs-12 text-center">
               <div className="section-top-title">
-                <h1>Add Career Path</h1>
+                <h1>Add Resources</h1>
               </div>
             </div>
             {/*- END COL */}
@@ -97,20 +93,20 @@ export default function AddCareerPath() {
                     <div className="form-group col-md-12">
                       <input
                         type="text"
-                        name="name"
+                        name="title"
                         className="form-control"
-                        placeholder="Name"
+                        placeholder="Title"
                         required="required"
-                        value={name}
+                        value={title}
                         onChange={(e) => {
-                          setName(e.target.value);
+                          setTitle(e.target.value);
                         }}
                       />
                     </div>
 
                     <div className="form-group col-md-12">
                       <textarea
-                        rows={6}
+                        rows={4}
                         name="message"
                         className="form-control"
                         placeholder="Description"
@@ -122,42 +118,27 @@ export default function AddCareerPath() {
                       />
                     </div>
 
-                    <div className="form-group col-md-4">
+                    <div className="form-group col-md-6">
                       <select
                         name=""
                         id=""
-                        value={programType}
+                        value={resourceType}
                         onChange={(e) => {
-                          setProgramType(e.target.value);
+                          setResourceType(e.target.value);
                         }}
                         style={{ height: "70px", width: "350px" }}
                       >
-                        <option value="Free">Free</option>
-                        <option value="Paid">Paid</option>
+                        <option value="PDF">PDF</option>
+                        <option value="Link">Link</option>
+                        <option value="Video">Video</option>
                       </select>
                     </div>
 
-                    {programType === "Paid" ? (
-                      <div className="form-group col-md-4">
-                        <input
-                          type="number"
-                          name="price"
-                          className="form-control"
-                          placeholder="Price (in ₹)"
-                          required="required"
-                          value={price}
-                          onChange={(e) => {
-                            setPrice(e.target.value);
-                          }}
-                        />
-                      </div>
-                    ) : null}
-
-                    <div className="form-group col-md-4">
+                    <div className="form-group col-md-6">
                       <input
                         type="file"
                         onChange={(e) => {
-                          setImage(e.target.files[0]);
+                          setResource(e.target.files[0]);
                         }}
                       />
                     </div>
@@ -170,7 +151,7 @@ export default function AddCareerPath() {
                         className="contact_btn"
                         title="Submit Your Message!"
                       >
-                        {loading ? "Adding Path..." : "Submit"}
+                        {loading ? "Adding Resource..." : "Submit"}
                       </button>
                     </div>
                   </div>

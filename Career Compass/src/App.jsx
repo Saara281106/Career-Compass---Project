@@ -24,6 +24,7 @@ import { ToastContainer } from "react-toastify";
 import Login from "./auth/Login";
 import EditCareerpath from "./Components/Admin/CareerPath/EditCareerPath";
 import EditMentorshipSession from "./Components/Admin/MentorshipSession/EditMentorshipSession";
+import EditResource from "./Components/Admin/Resources/EditResources";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
             <Route path="mentorshipSession/edit/:id" element={<EditMentorshipSession/>} />
             <Route path="resources/manage" element={<ManageResources/>} />
             <Route path="resources/add" element={<AddResources/>} />
+            <Route path="resources/edit/:id" element={<EditResource/>} />
             <Route path="viewBooking" element={<ViewBooking/>} />
             <Route path="profile" element={<Profile/>} />
           </Route>

@@ -121,7 +121,7 @@ export default function ManageCareerPath() {
 
                   <button
                     type="button"
-                    className="btn btn-sm btn-danger ms-2"
+                    className="btn btn-sm btn-danger"
                     onClick={() => {
                       deleteCareerPath(careerPath.id);
                     }}

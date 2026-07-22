@@ -3,7 +3,7 @@ import CareerPathService from "../../../services/CareerPathService";
 import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function EditCareerPath() {
+export default function EditResource() {
   let [loading, setLoading] = useState(false);
 
   const params = useParams();

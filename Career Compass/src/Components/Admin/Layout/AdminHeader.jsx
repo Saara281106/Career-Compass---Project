@@ -81,8 +81,28 @@ export default function AdminHeader() {
                         </Link>
                       </li>
                       <li>
-                        <Link to="/admin/MentorshipSession/add" className="nav-link">
+                        <Link to="/admin/mentorshipSession/add" className="nav-link">
                          Add Mentorship Session
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="has-children">
+                    <Link
+                      
+                      className="nav-link text-light"
+                    >
+                      Resources
+                    </Link>
+                    <ul className="dropdown">
+                      <li>
+                        <Link to="/admin/resources/manage" className="nav-link">
+                         Manage Resources
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/admin/resources/add" className="nav-link">
+                         Add Resources
                         </Link>
                       </li>
                     </ul>
