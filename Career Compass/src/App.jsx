@@ -7,7 +7,6 @@ import Home from "./Components/Student/Pages/Home";
 import About from "./Components/Student/Pages/About";
 import Team from "./Components/Student/Pages/Team";
 import Contact from "./Components/Student/Pages/Contact";
-import Services from "./Components/Student/Pages/Services";
 import Mentorship from "./Components/Student/Pages/Mentorship";
 import AdminLayout from "./Components/Admin/Layout/AdminLayout";
 import AddCareerPath from "./Components/Admin/CareerPath/AddCareerPath";
@@ -25,6 +24,7 @@ import Login from "./auth/Login";
 import EditCareerpath from "./Components/Admin/CareerPath/EditCareerPath";
 import EditMentorshipSession from "./Components/Admin/MentorshipSession/EditMentorshipSession";
 import EditResource from "./Components/Admin/Resources/EditResources";
+import CareerPath from "./Components/Student/Pages/CareerPath";
 
 function App() {
   return (
@@ -37,7 +37,7 @@ function App() {
             <Route path="/about" element={<About/>}></Route>
             <Route path="/team" element={<Team/>}></Route>
             <Route path="/contact" element={<Contact/>}></Route>
-            <Route path="/services" element={<Services/>}></Route>
+            <Route path="/services" element={<CareerPath/>}></Route>
             <Route path="/mentorship" element={<Mentorship/>}></Route>
             <Route path="/register" element={<Register/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
