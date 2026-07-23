@@ -25,6 +25,7 @@ import EditMentorshipSession from "./Components/Admin/MentorshipSession/EditMent
 import EditResource from "./Components/Admin/Resources/EditResources";
 import CareerPath from "./Components/Student/Pages/CareerPath";
 import MentorshipSessions from "./Components/Student/Pages/MentorshipSessions";
+import Resources from "./Components/Student/Pages/Resources";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <Route path="/mentorshipSession" element={<MentorshipSessions/>}></Route>
             <Route path="/register" element={<Register/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
+            <Route path="/resources" element={<Resources/>}></Route>
           </Route>
           {/* Student Routes Ends */}
 

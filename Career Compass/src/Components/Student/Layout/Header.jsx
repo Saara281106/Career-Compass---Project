@@ -60,11 +60,11 @@ export default function Header() {
                       </Link>
                     </li>
 
-                    <li>
+                    {/* <li>
                       <Link className="nav-link text-light" to="/team">
                         Mentors
                       </Link>
-                    </li>
+                    </li> */}
 
                     {email ? (
                       <li>
@@ -74,6 +74,21 @@ export default function Header() {
                             to="/mentorshipSession"
                           >
                             Mentorship Sessions
+                          </Link>
+                        
+                      </li>
+                    ) : (
+                      null
+                    )}
+
+                    {email ? (
+                      <li>
+                        
+                          <Link
+                            className="nav-link text-light"
+                            to="/resources"
+                          >
+                            Resources
                           </Link>
                         
                       </li>

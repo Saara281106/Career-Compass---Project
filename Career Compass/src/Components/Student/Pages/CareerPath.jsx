@@ -1,28 +1,28 @@
 import { useEffect, useState } from "react";
 import CareerPathService from "../../../services/CareerPathService";
+import "./CareerPath.css";
 
 export default function CareerPath() {
-
   let [loading, setLoading] = useState(false);
-  
-    const [careerPath, setCareerPath] = useState([]);
-    useEffect(() => {
-      getAllCareerPath();
-    }, []);
-  
-    async function getAllCareerPath() {
-      try {
-        setLoading(true);
-        let res = await CareerPathService.all();
-        console.log(res);
-        setCareerPath(res);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoading(false);
-      }
+
+  const [careerPath, setCareerPath] = useState([]);
+  useEffect(() => {
+    getAllCareerPath();
+  }, []);
+
+  async function getAllCareerPath() {
+    try {
+      setLoading(true);
+      let res = await CareerPathService.all();
+      console.log(res);
+      setCareerPath(res);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
     }
+  }
 
   return (
     <>
@@ -54,36 +54,39 @@ export default function CareerPath() {
         <section className="portfolio_project_area section-padding">
           <div className="container">
             <div className="row">
-
               {careerPath.map((careerPath, index) => (
-              <div className="col-lg-12 col-sm-12 col-xs-12">
-                <div className="single_project">
-                  <img
-                    src={careerPath.imageUrl}
-                    style={{
-                      height: "250px",
-                      width : "300px"
-                      
-                      // borderRadius: "50%",
-                    }}
-                    alt=""
-                  />
-                  <h1>{index + 1}</h1>
-                  <h2>{careerPath.name}</h2>
-                  <p>
-                    {careerPath.description}
-                  </p>
-                  <p>{careerPath.programType === "Paid" ? (
-                    <><button type="button" className="btn btn-primary">₹ {careerPath.price}</button></>
-                  ) : (
-                    <button type="button" className="btn btn-warning"> Free </button>
-                  )}</p>
-                </div>
-              </div>
-            ))}
-            
-              {/*- END COL */}
+                <div className="col-lg-4 col-sm-4 col-xs-4">
+                  <div className="card h-100 shadow-sm border-0">
+                    <img
+                      src={careerPath.imageUrl}
+                      className="card-img-top"
+                      style={{
+                        height: "220px",
+                        objectFit: "cover",
+                      }}
+                      alt={careerPath.name}
+                    />
 
+                    <div className="card-body">
+                      <h4 className="card-title">{careerPath.name}</h4>
+
+                      <p className="card-text">{careerPath.description}</p>
+                    </div>
+
+                    <div className="card-footer bg-white border-0">
+                      {careerPath.programType === "Paid" ? (
+                        <button className="btn btn-primary w-100">
+                          ₹ {careerPath.price}
+                        </button>
+                      ) : (
+                        <button className="btn btn-warning w-100">Free</button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              {/*- END COL */}
             </div>
             {/*- END ROW */}
           </div>

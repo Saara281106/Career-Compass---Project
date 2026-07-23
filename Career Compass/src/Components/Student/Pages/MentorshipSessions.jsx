@@ -53,11 +53,11 @@ export default function MentorshipSessions() {
         <section className="single_project_area section-padding">
           {mentorshipSession.map((mentorshipSession, index) => (
             <div className="container">
-              <div className="row project_dec">
+              <div className="row project_dec card">
                 <div className="col-lg-12 col-sm-12 col-xs-12">
-                  <div className="project_details">
+                  <div className="project_details ">
                     <div className="about_project">
-                      <h4>{mentorshipSession.title}</h4>
+                      <h4> {mentorshipSession.title}</h4>
                       <p>{mentorshipSession.description}</p>
                     </div>
                     <div className="about_project_details">
