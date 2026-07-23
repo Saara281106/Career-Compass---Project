@@ -15,6 +15,7 @@ class ResourceService {
     const docRef = await addDoc(collection(db, dbPath), {
       ...newResource,
     });
+    return newResource;
   }
 
   async all() {

@@ -93,18 +93,41 @@ export default function ManageResources() {
                 <td scope="row">{resources.title}</td>
                 <td scope="row">{resources.description} </td>
                 <td scope="row">{resources.resourceType} </td>
-                <td scope="row">
-                  <img
-                    src={resources.resourceUrl}
-                    style={{
-                      height: "100px",
-                      width: "100px",
-                      // borderRadius: "50%",
-                    }}
-                    alt=""
-                  />
+                <td>
+                  {resources.resourceType === "PDF" && (
+                    <a
+                      href={resources.resourceUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn btn-sm btn-primary"
+                    >
+                      View PDF
+                    </a>
+                  )}
+
+                  {resources.resourceType === "Video" && (
+                    <a
+                      href={resources.resourceUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn btn-sm btn-success"
+                    >
+                      Watch Video
+                    </a>
+                  )}
+
+                  {resources.resourceType === "Link" && (
+                    <a
+                      href={resources.resourceUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn btn-sm btn-warning"
+                    >
+                      Open Link
+                    </a>
+                  )}
                 </td>
-                
+
                 <td scope="row">
                   <Link to={`/admin/resources/edit/${resources.id}`}>
                     <button type="button" className="btn btn-sm btn-info">

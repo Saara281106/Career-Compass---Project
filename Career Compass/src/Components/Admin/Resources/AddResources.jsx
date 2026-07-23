@@ -18,8 +18,12 @@ export default function AddResources() {
     try {
       setLoading(true);
 
-      if (resource) {
-        var resourceUrl = await CloudinaryService.upload(resource);
+      let resourceUrl = "";
+
+      if ((resourceType === "PDF") | (resourceType === "Video")) {
+        resourceUrl = await CloudinaryService.upload(resource);
+      } else {
+        resourceUrl = resource;
       }
 
       let payload = {
@@ -38,7 +42,8 @@ export default function AddResources() {
       nav("/admin/resources/manage");
       setTitle("");
       setDescription("");
-      setResourceType("");
+      setResourceType("PDF");
+      setResource("");
       //setResourceUrl("");
     } catch (error) {
       setLoading(false);

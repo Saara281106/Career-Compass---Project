@@ -1,33 +1,35 @@
 import { useEffect, useState } from "react";
-import CareerPathService from "../../../services/CareerPathService";
 import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
+import CloudinaryService from "../../../services/CloudinaryService";
+import ResourceService from "../../../services/ResourceService";
 
 export default function EditResource() {
   let [loading, setLoading] = useState(false);
 
   const params = useParams();
 
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [image, setImage] = useState("");
-  const [programType, setProgramType] = useState("Free");
+  const [resourceType, setResourceType] = useState("PDF");
+  const [resource, setResource] = useState("");
 
   const nav = useNavigate();
 
   useEffect(() => {
-    getCareerPathDetails();
+    getResourceDetails();
   }, []);
 
-  async function getCareerPathDetails() {
+  async function getResourceDetails() {
     try {
       setLoading(true);
-      let res = await CareerPathService.single(params.id);
-      setName(res.name);
+
+      let res = await ResourceService.single(params.id);
+
+      setTitle(res.title);
       setDescription(res.description);
-      setPrice(res.price);
-      setProgramType(res.programType);
+      setResourceType(res.resourceType);
+      setResource(res.resourceUrl);
     } catch (error) {
       console.log(error);
     } finally {
@@ -37,33 +39,34 @@ export default function EditResource() {
 
   async function submit(e) {
     e.preventDefault();
+
     try {
       setLoading(true);
 
-      let payload = {
-        name: name,
-        description: description,
-        programType: programType,
-      };
-      if (programType === "Paid") {
-        payload.price = price;
-      } else{
-        payload.price = price;
+      let resourceUrl = resource;
+
+      if (
+        (resourceType === "PDF" || resourceType === "Video") &&
+        resource instanceof File
+      ) {
+        resourceUrl = await CloudinaryService.upload(resource);
       }
+
+      let payload = {
+        title: title,
+        description: description,
+        resourceType: resourceType,
+        resourceUrl: resourceUrl,
+      };
 
       console.log(payload);
 
-      await CareerPathService.update(params.id, payload);
+      await ResourceService.update(params.id, payload);
 
-      setLoading(false);
-      toast.success("Career Path Updated Successfully");
-      nav("/admin/careerpath/manage");
-      setName("");
-      setDescription("");
-      setProgramType("");
-      setPrice("");
+      toast.success("Resource Updated Successfully");
+
+      nav("/admin/resources/manage");
     } catch (error) {
-      setLoading(false);
       console.log(error);
       toast.error(error.code);
     } finally {
@@ -86,7 +89,7 @@ export default function EditResource() {
           <div className="row">
             <div className="col-lg-12 col-sm-12 col-xs-12 text-center">
               <div className="section-top-title">
-                <h1>Edit Career Path</h1>
+                <h1>Edit Resource</h1>
               </div>
             </div>
             {/*- END COL */}
@@ -115,22 +118,24 @@ export default function EditResource() {
                     <div className="form-group col-md-12">
                       <input
                         type="text"
-                        name="name"
+                        name="title"
                         className="form-control"
-                        placeholder="Name"
-                        value={name}
+                        placeholder="Title"
+                        required="required"
+                        value={title}
                         onChange={(e) => {
-                          setName(e.target.value);
+                          setTitle(e.target.value);
                         }}
                       />
                     </div>
 
                     <div className="form-group col-md-12">
                       <textarea
-                        rows={6}
+                        rows={4}
                         name="message"
                         className="form-control"
                         placeholder="Description"
+                        required="required"
                         value={description}
                         onChange={(e) => {
                           setDescription(e.target.value);
@@ -138,39 +143,44 @@ export default function EditResource() {
                       />
                     </div>
 
-                    <div className="form-group col-md-4">
+                    <div className="form-group col-md-6">
                       <select
                         name=""
                         id=""
-                        value={programType}
+                        value={resourceType}
                         onChange={(e) => {
-                          setProgramType(e.target.value);
+                          setResourceType(e.target.value);
                         }}
-                        style={{ height: "70px", width: "350px" }}
+                        style={{ height: "70px", width: "525px" }}
                       >
-                        <option value="Free">Free</option>
-                        <option value="Paid">Paid</option>
+                        <option value="PDF">PDF</option>
+                        <option value="Link">Link</option>
+                        <option value="Video">Video</option>
                       </select>
                     </div>
-
-                    {programType === "Paid" ? (
-                      <div className="form-group col-md-4">
+                    {resourceType === "PDF" || resourceType === "Video" ? (
+                      <div className="form-group col-md-6">
                         <input
-                          type="number"
-                          name="price"
-                          className="form-control"
-                          placeholder="Price (in ₹)"
-                          value={price}
+                          type="file"
                           onChange={(e) => {
-                            setPrice(e.target.value);
+                            setResource(e.target.files[0]);
                           }}
                         />
                       </div>
-                    ) : null}
+                    ) : (
+                      <div className="form-group col-md-6">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Enter Link"
+                          value={resource}
+                          onChange={(e) => {
+                            setResource(e.target.value);
+                          }}
+                        />
+                      </div>
+                    )}
 
-                    <div className="form-group col-md-4">
-                      <input type="file" />
-                    </div>
                     <div className="col-md-12 text-center">
                       <button
                         type="submit"
@@ -180,7 +190,7 @@ export default function EditResource() {
                         className="contact_btn"
                         title="Submit Your Message!"
                       >
-                        {loading ? "Updating..." : "Update"}
+                        {loading ? "Adding Resource..." : "Submit"}
                       </button>
                     </div>
                   </div>
