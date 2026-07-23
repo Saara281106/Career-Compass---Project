@@ -137,7 +137,7 @@ export default function ManageResources() {
 
                   <button
                     type="button"
-                    className="btn btn-sm btn-danger ms-2"
+                    className="btn btn-sm btn-danger "
                     onClick={() => {
                       deleteResourecs(resources.id);
                     }}
