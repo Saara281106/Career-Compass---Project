@@ -87,6 +87,13 @@ export default function AdminHeader() {
                       </li>
                     </ul>
                   </li>
+
+                  <li className="">
+                    <Link to="/admin/viewBookings" className="nav-link text-light">
+                      Bookings
+                    </Link>
+                  </li>
+
                   <li className="has-children">
                     <Link
                       

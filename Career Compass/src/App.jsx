@@ -26,6 +26,7 @@ import MentorshipSessions from "./Components/Student/Pages/MentorshipSessions";
 import Resources from "./Components/Student/Pages/Resources";
 import Profile from "./Components/Student/Pages/Profile";
 import MyBookings from "./Components/Student/Pages/MyBookings";
+import ViewBookigs from "./Components/Admin/Booking/ViewBookigs";
 
 function App() {
   return (
@@ -60,7 +61,7 @@ function App() {
             <Route path="resources/manage" element={<ManageResources/>} />
             <Route path="resources/add" element={<AddResources/>} />
             <Route path="resources/edit/:id" element={<EditResource/>} />
-            <Route path="profile" element={<Profile/>} />
+            <Route path="viewBookings" element={<ViewBookigs/>} />
           </Route>
           {/* Admin Panel Ends */}
         </Routes>

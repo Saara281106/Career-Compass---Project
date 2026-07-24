@@ -3,10 +3,11 @@ import MentorshipSessionService from "../../../services/MentorshipSessionService
 import BookingService from "../../../services/BookingService";
 import AuthService from "../../../services/AuthService";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export default function MentorshipSessions() {
   let [loading, setLoading] = useState(false);
-
+  const nav = useNavigate();
   const [bookings, setBookings] = useState([]);
 
   const [mentorshipSession, setMentorshipSession] = useState([]);
@@ -61,6 +62,8 @@ export default function MentorshipSessions() {
       await BookingService.add(payload);
 
       toast.success("Session booked successfully!");
+       nav("/myBookings");
+
     } catch (error) {
       console.log(error);
       toast.error("Something went wrong");
