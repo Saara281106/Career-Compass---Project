@@ -15,7 +15,6 @@ import ManageCareerPath from "./Components/Admin/CareerPath/ManageCareerPath";
 import ManageMentorshipSession from "./Components/Admin/MentorshipSession/ManageMentorshipSession";
 import ManageResources from "./Components/Admin/Resources/ManageResources";
 import AddResources from "./Components/Admin/Resources/AddResources";
-import ViewBooking from "./Components/Admin/Booking/ViewBooking";
 import Register from "./auth/Register";
 import { ToastContainer } from "react-toastify";
 import Login from "./auth/Login";
@@ -26,6 +25,7 @@ import CareerPath from "./Components/Student/Pages/CareerPath";
 import MentorshipSessions from "./Components/Student/Pages/MentorshipSessions";
 import Resources from "./Components/Student/Pages/Resources";
 import Profile from "./Components/Student/Pages/Profile";
+import MyBookings from "./Components/Student/Pages/MyBookings";
 
 function App() {
   return (
@@ -44,6 +44,7 @@ function App() {
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/resources" element={<Resources/>}></Route>
             <Route path="/profile" element={<Profile/>}></Route>
+            <Route path="/myBookings" element={<MyBookings/>}></Route>
           </Route>
           {/* Student Routes Ends */}
 
@@ -59,7 +60,6 @@ function App() {
             <Route path="resources/manage" element={<ManageResources/>} />
             <Route path="resources/add" element={<AddResources/>} />
             <Route path="resources/edit/:id" element={<EditResource/>} />
-            <Route path="viewBooking" element={<ViewBooking/>} />
             <Route path="profile" element={<Profile/>} />
           </Route>
           {/* Admin Panel Ends */}

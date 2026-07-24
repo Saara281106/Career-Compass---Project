@@ -79,6 +79,17 @@ export default function Header() {
 
                     {email ? (
                       <li>
+                        <Link
+                          className="nav-link text-light"
+                          to="/myBookings"
+                        >
+                          My Bookings
+                        </Link>
+                      </li>
+                    ) : null}
+
+                    {email ? (
+                      <li>
                         <Link className="nav-link text-light" to="/resources">
                           Resources
                         </Link>

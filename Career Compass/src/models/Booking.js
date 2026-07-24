@@ -1,9 +1,16 @@
 export class Booking {
-  mentor = ""
-  userId = ""
-  sessionId = ""
-  bookingStatus = "Pending" //Pending/Approved/Rejected/Completed
-  adminRemark = ""
-  createdAt = ""
+  userId = "";
+  studentName = "";
+  studentEmail = "";
 
+  sessionId = "";
+  sessionTitle = "";
+  sessionDate = "";
+
+  mentorName = "";
+  meetingLink = "";
+
+  bookingStatus = "Booked";
+
+  createdAt = "";
 }
